@@ -2,7 +2,14 @@
 export default {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				redPod: '#FE6D73',
+			},
+			fontFamily: {
+				roboto: ['Roboto', 'sans-serif'],
+			},
+		},
 	},
 	plugins: [],
 };
