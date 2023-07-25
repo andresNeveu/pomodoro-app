@@ -11,9 +11,9 @@ const App = () => {
 				</header>
 				<nav className='md:w-1/2'>Navigate</nav>
 			</div>
-			<section>
+			<>
 				<Timer />
-			</section>
+			</>
 			<section>
 				<Tasks />
 			</section>
