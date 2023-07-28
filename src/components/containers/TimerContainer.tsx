@@ -3,7 +3,7 @@ interface Props {
 }
 
 const TimerContainer = (props: Props) => {
-	return <section className=' bg-blue-700'>{props.children}</section>;
+	return <section>{props.children}</section>;
 };
 
 export default TimerContainer;
