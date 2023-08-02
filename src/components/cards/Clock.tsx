@@ -11,11 +11,11 @@ interface timeClock {
 
 const Clock = (props: timeClock) => {
 	return (
-		<>
+		<div className='flex justify-center font-roboto font-semibold text-7xl'>
 			<span>{formatNumber(Math.floor(props.seconds / 60))}</span>
 			<span>:</span>
 			<span>{formatNumber(props.seconds % 60)}</span>
-		</>
+		</div>
 	);
 };
 

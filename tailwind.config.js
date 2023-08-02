@@ -4,7 +4,7 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				redPod: '#FE6D73',
+				'red-450': '#F95D5D',
 			},
 			fontFamily: {
 				roboto: ['Roboto', 'sans-serif'],
