@@ -4,7 +4,7 @@
 
 @layer base {
   #root {
-    @apply bg-red-400;
+    @apply bg-red-450;
     @apply h-screen;
     @apply p-3;
   }

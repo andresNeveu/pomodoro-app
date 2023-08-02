@@ -5,11 +5,11 @@ const formatNumber = (num: number): String => {
 	});
 };
 
-interface timeClock {
+interface propsClock {
 	seconds: number;
 }
 
-const Clock = (props: timeClock) => {
+const Clock = (props: propsClock) => {
 	return (
 		<div className='flex justify-center font-roboto font-semibold text-7xl'>
 			<span>{formatNumber(Math.floor(props.seconds / 60))}</span>

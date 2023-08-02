@@ -1,27 +1,17 @@
 import Clock from '../cards/Clock';
 import useTimer from '../../hooks/useTimer';
+import TimerControl from '../controls/TimerControl';
 
 const Timer = () => {
-	const { seconds, running, start, pause, reset, stop } = useTimer({
+	const { seconds, start, pause, reset, stop } = useTimer({
 		initialSeconds: 5,
 	});
 	console.log('hola', seconds);
 
 	return (
-		<section className='border-4 p-1 bg-red-450'>
+		<section className='p-1 bg-red-400 rounded'>
 			<Clock seconds={seconds} />
-			<button onClick={start} type='button' className='px-3'>
-				Run
-			</button>
-			<button onClick={pause} type='button' className='px-3'>
-				Pause
-			</button>
-			<button onClick={reset} type='button' className='px-3'>
-				Reset
-			</button>
-			<button onClick={stop} type='button'>
-				Stop
-			</button>
+			<TimerControl start={start} pause={pause} reset={reset} stop={stop} />
 		</section>
 	);
 };
