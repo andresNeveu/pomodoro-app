@@ -1,18 +1,34 @@
-import Clock from '../cards/Clock';
 import useTimer from '../../hooks/useTimer';
-import TimerControl from '../controls/TimerControl';
+import startSVG from '/start.svg';
+import pauseSVG from '/pause.svg';
+import resetSVG from '/reset.svg';
+import nextSVG from '/next.svg';
+import { useEffect } from 'react';
+import Clock from '../cards/Clock';
 
 const Timer = () => {
-	const { seconds, start, pause, reset, stop } = useTimer({
+	const { seconds, running, start, pause, reset, stop } = useTimer({
 		initialSeconds: 5,
 	});
-	console.log('hola', seconds);
+	console.log('hola', running, seconds);
+
+	useEffect(() => {
+		if (!running && seconds === 0) {
+			stop();
+		}
+	}, [running]);
 
 	return (
-		<section className='p-1 bg-red-400 rounded'>
-			<Clock seconds={seconds} />
-			<TimerControl start={start} pause={pause} reset={reset} stop={stop} />
-		</section>
+		<>
+			<ul className='flex justify-evenly md:w-1/3 mx-auto py-2'>
+				<li>Work</li>
+				<li>Short Break</li>
+				<li>Long Break</li>
+			</ul>
+			<section className='bg-red-400 rounded md:w-1/3 mx-auto px-2 py-4'>
+				<Clock />
+			</section>
+		</>
 	);
 };
 
