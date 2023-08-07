@@ -5,11 +5,14 @@ import resetSVG from '/reset.svg';
 import nextSVG from '/next.svg';
 import { useEffect } from 'react';
 
-const Clock = () => {
+interface propsClock {
+	initialSeconds: number;
+}
+
+const Clock = (props: propsClock) => {
 	const { seconds, running, start, pause, reset, stop } = useTimer({
-		initialSeconds: 5,
+		initialSeconds: props.initialSeconds,
 	});
-	console.log('hola', running, seconds);
 
 	useEffect(() => {
 		if (!running && seconds === 0) {
